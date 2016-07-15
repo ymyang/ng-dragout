@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+
+  <style>
+    .file-item {
+      margin: 15px;
+      padding: 5px;
+      border: 1px dashed gray;
+    }
+
+  </style>
+</head>
+<body ng-app="app">
+<div ng-controller="AppCtrl">
+  <span class="file-item" ng-drag-out="file">
+    test.jpg
+  </span>
+</div>
+
+<script src="./angular.min.js"></script>
+<script src="../dist/ng-dragout.min.js"></script>
+
+<script>
+  angular.module('app', ['ng-dragout']).controller('AppCtrl', function($scope) {
+
+    $scope.file = {
+      mime: 'image/jpg',
+      name: 'test.jpg',
+      url: 'http://192.168.0.26/test.jpg'
+    };
+
+  });
+</script>
+</body>
+</html>
